@@ -1,0 +1,23 @@
+x vaut 3.
+y vaut "bonjour".
+z vaut [1, 2, 3].
+
+répéter 3 fois:
+    afficher "ho!".
+afficher typeDe(x).
+afficher typeDe(y).
+afficher typeDe(z).
+
+répéter pour chaque élément de z:
+    afficher "valeur: ",
+    afficher élément,
+    si élément > 0
+    alors afficher "plus grand que zéro"
+    sinon afficher "plus petit ou égal à zéro".
+    cuire.
+
+x devient 4. //On modifie la valeur
+
+fonction cuire:
+    afficher "cuisson en cours".
+    afficher "fin de la cuisson".
