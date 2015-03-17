@@ -2,6 +2,7 @@ package com.olivierlafleur.topaze;
 
 import com.olivierlafleur.topaze.instructions.Instruction;
 import com.olivierlafleur.topaze.instructions.InstructionInitialisation;
+import org.antlr.v4.runtime.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -20,5 +21,18 @@ public class ParseurTest {
 
         assertEquals(3, instructionInitialisation.getValeur());
         assertEquals("x", instructionInitialisation.getNom());
+    }
+
+    @Test
+    public void testExampleField() throws Exception {
+        com.olivierlafleur.topaze.TopazeLexer l = new com.olivierlafleur.topaze.TopazeLexer(new ANTLRInputStream(getClass().getResourceAsStream("/test.tpz")));
+        com.olivierlafleur.topaze.TopazeParser p = new com.olivierlafleur.topaze.TopazeParser(new CommonTokenStream(l));
+        p.addErrorListener(new BaseErrorListener() {
+            @Override
+            public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
+                throw new IllegalStateException("failed to parse at line " + line + " due to " + msg, e);
+            }
+        });
+        p.topaze();
     }
 }
