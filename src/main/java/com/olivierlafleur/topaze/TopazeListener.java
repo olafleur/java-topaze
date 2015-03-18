@@ -4,18 +4,18 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
- * This interface defines a complete listener for a parse tree produced by
+ * This interface defines a complete listener for a parseInstruction tree produced by
  * {@link TopazeParser}.
  */
 public interface TopazeListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link TopazeParser#topaze}.
-	 * @param ctx the parse tree
+	 * Enter a parseInstruction tree produced by {@link TopazeParser#topaze}.
+	 * @param ctx the parseInstruction tree
 	 */
 	void enterTopaze(@NotNull TopazeParser.TopazeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link TopazeParser#topaze}.
-	 * @param ctx the parse tree
+	 * Exit a parseInstruction tree produced by {@link TopazeParser#topaze}.
+	 * @param ctx the parseInstruction tree
 	 */
 	void exitTopaze(@NotNull TopazeParser.TopazeContext ctx);
 }

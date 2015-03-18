@@ -6,10 +6,10 @@ import java.io.IOException;
 
 public class ParseurTest {
     @Test
-    public void testLectureFichierSimple() throws IOException {
+    public void testParseInstructionInitialisation() throws IOException {
         Parseur parseur = new Parseur();
 
-        parseur.parse("/test.tpz");
+        parseur.parseInstruction("x vaut 3.");
 
         //TODO : Valider valeur stockée
     }

@@ -4,7 +4,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
- * This interface defines a complete generic visitor for a parse tree produced
+ * This interface defines a complete generic visitor for a parseInstruction tree produced
  * by {@link TopazeParser}.
  *
  * @param <T> The return type of the visit operation. Use {@link Void} for
@@ -12,8 +12,8 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface TopazeVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link TopazeParser#topaze}.
-	 * @param ctx the parse tree
+	 * Visit a parseInstruction tree produced by {@link TopazeParser#topaze}.
+	 * @param ctx the parseInstruction tree
 	 * @return the visitor result
 	 */
 	T visitTopaze(@NotNull TopazeParser.TopazeContext ctx);
