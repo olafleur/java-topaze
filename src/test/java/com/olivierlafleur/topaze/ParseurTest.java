@@ -25,8 +25,8 @@ public class ParseurTest {
 
     @Test
     public void testExampleField() throws Exception {
-        com.olivierlafleur.topaze.TopazeLexer l = new com.olivierlafleur.topaze.TopazeLexer(new ANTLRInputStream(getClass().getResourceAsStream("/test.tpz")));
-        com.olivierlafleur.topaze.TopazeParser p = new com.olivierlafleur.topaze.TopazeParser(new CommonTokenStream(l));
+        TopazeLexer l = new TopazeLexer(new ANTLRInputStream(getClass().getResourceAsStream("/test.tpz")));
+        TopazeParser p = new TopazeParser(new CommonTokenStream(l));
         p.addErrorListener(new BaseErrorListener() {
             @Override
             public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
