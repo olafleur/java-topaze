@@ -12,6 +12,30 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface TopazeVisitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link TopazeParser#parse}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParse(@NotNull TopazeParser.ParseContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TopazeParser#block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBlock(@NotNull TopazeParser.BlockContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TopazeParser#instruction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInstruction(@NotNull TopazeParser.InstructionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TopazeParser#affichage}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAffichage(@NotNull TopazeParser.AffichageContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link TopazeParser#initialisation}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

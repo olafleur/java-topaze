@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
-public class ParseurTest {
+public class InitialisationTest {
     @Test
     public void testParseInstructionInitialisation() throws IOException {
         Parseur parseur = new Parseur();

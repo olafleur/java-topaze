@@ -1,7 +1,11 @@
 T__0=1
 T__1=2
-Nom=3
-WS=4
-Int=5
-'vaut'=1
-'.'=2
+T__2=3
+T__3=4
+Chaine=5
+WS=6
+Int=7
+'afficher'=1
+'"'=2
+'.'=3
+'vaut'=4

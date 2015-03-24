@@ -19,9 +19,9 @@ public class Parseur {
             }
         });
 
-        TopazeBaseVisitorVariable topazeBaseVisitorVariable = new TopazeBaseVisitorVariable();
+        TopazeVisitorVariable topazeVisitorVariable = new TopazeVisitorVariable();
 
-        etatMachine.ajouterVariable(topazeBaseVisitorVariable.visitInitialisation(parser.initialisation()));
+        etatMachine.ajouterVariable(topazeVisitorVariable.visitInstruction(parser.instruction()));
 
         return etatMachine;
     }
