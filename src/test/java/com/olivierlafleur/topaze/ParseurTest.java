@@ -4,13 +4,22 @@ import org.junit.Test;
 
 import java.io.IOException;
 
+import static org.junit.Assert.assertEquals;
+
 public class ParseurTest {
     @Test
     public void testParseInstructionInitialisation() throws IOException {
         Parseur parseur = new Parseur();
 
         parseur.parseInstruction("x vaut 3.");
+    }
 
-        //TODO : Valider valeur stockée
+    @Test
+    public void testAjoutEntierMachine() {
+        EtatMachine etatMachine = new EtatMachine();
+
+        etatMachine.ajouterEntier("x", 3);
+
+        assertEquals(3, etatMachine.getValeur("x"));
     }
 }
