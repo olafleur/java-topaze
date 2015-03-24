@@ -18,5 +18,5 @@ public class TopazeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTopaze(@NotNull TopazeParser.TopazeContext ctx) { return visitChildren(ctx); }
+	@Override public T visitInitialisation(@NotNull TopazeParser.InitialisationContext ctx) { return visitChildren(ctx); }
 }

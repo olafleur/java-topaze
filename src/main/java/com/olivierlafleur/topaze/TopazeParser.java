@@ -19,9 +19,9 @@ public class TopazeParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, Nom=3, WS=4, Int=5;
 	public static final int
-		RULE_topaze = 0;
+		RULE_initialisation = 0;
 	public static final String[] ruleNames = {
-		"topaze"
+		"initialisation"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
@@ -79,7 +79,7 @@ public class TopazeParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
-	public static class TopazeContext extends ParserRuleContext {
+	public static class InitialisationContext extends ParserRuleContext {
 		public Token nom;
 		public Token valeur;
 		public List<TerminalNode> WS() { return getTokens(TopazeParser.WS); }
@@ -88,33 +88,25 @@ public class TopazeParser extends Parser {
 		}
 		public TerminalNode Nom() { return getToken(TopazeParser.Nom, 0); }
 		public TerminalNode Int() { return getToken(TopazeParser.Int, 0); }
-		public TopazeContext(ParserRuleContext parent, int invokingState) {
+		public InitialisationContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_topaze; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof TopazeListener ) ((TopazeListener)listener).enterTopaze(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof TopazeListener ) ((TopazeListener)listener).exitTopaze(this);
-		}
+		@Override public int getRuleIndex() { return RULE_initialisation; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof TopazeVisitor ) return ((TopazeVisitor<? extends T>)visitor).visitTopaze(this);
+			if ( visitor instanceof TopazeVisitor ) return ((TopazeVisitor<? extends T>)visitor).visitInitialisation(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final TopazeContext topaze() throws RecognitionException {
-		TopazeContext _localctx = new TopazeContext(_ctx, getState());
-		enterRule(_localctx, 0, RULE_topaze);
+	public final InitialisationContext initialisation() throws RecognitionException {
+		InitialisationContext _localctx = new InitialisationContext(_ctx, getState());
+		enterRule(_localctx, 0, RULE_initialisation);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(2); 
-			((TopazeContext)_localctx).nom = match(Nom);
+			((InitialisationContext)_localctx).nom = match(Nom);
 			setState(3); 
 			match(WS);
 			setState(4); 
@@ -122,7 +114,7 @@ public class TopazeParser extends Parser {
 			setState(5); 
 			match(WS);
 			setState(6); 
-			((TopazeContext)_localctx).valeur = match(Int);
+			((InitialisationContext)_localctx).valeur = match(Int);
 			setState(7); 
 			match(T__1);
 			}

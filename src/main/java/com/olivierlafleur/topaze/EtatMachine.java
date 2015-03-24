@@ -1,19 +1,23 @@
 package com.olivierlafleur.topaze;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class EtatMachine {
-    private HashMap<String, Integer> variables;
+    private ArrayList<Variable> variables;
 
     public EtatMachine() {
-        variables = new HashMap<String, Integer>();
+        variables = new ArrayList<>();
     }
 
-    public void ajouterEntier(String nom, int valeur) {
-        variables.put(nom, valeur);
+    public void ajouterVariable(Variable variable) {
+        variables.add(variable);
     }
 
-    public int getValeur(String x) {
-        return variables.get(x);
+    public int getValeur(String nom) {
+        return variables.stream()
+                .filter(v -> v.getName().equals(nom))
+                .findAny()
+                .get()
+                .getValeur();
     }
 }
