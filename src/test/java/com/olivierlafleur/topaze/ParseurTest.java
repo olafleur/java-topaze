@@ -41,4 +41,12 @@ public class ParseurTest {
         assertEquals(3, etatMachine.getValeur("x"));
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void testMauvaiseInitialisation() throws IOException {
+        Parseur parseur = new Parseur();
+
+        parseur.parseInstruction(new EtatMachine(), "x vaut 3");
+    }
+
+
 }
