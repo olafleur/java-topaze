@@ -11,7 +11,7 @@ public class InitialisationTest {
     public void testParseInstructionInitialisation() throws IOException {
         Parseur parseur = new Parseur();
 
-        parseur.parseInstruction(new EtatMachine(), "x vaut 3.");
+        parseur.executerInstruction(new EtatMachine(), "x vaut 3.");
     }
 
     @Test
@@ -36,7 +36,7 @@ public class InitialisationTest {
     public void testParseVariable_machineModifiee() throws IOException {
         Parseur parseur = new Parseur();
 
-        EtatMachine etatMachine = parseur.parseInstruction(new EtatMachine(), "x vaut 3.");
+        EtatMachine etatMachine = parseur.executerInstruction(new EtatMachine(), "x vaut 3.");
 
         assertEquals(3, etatMachine.getValeur("x"));
     }
@@ -45,14 +45,14 @@ public class InitialisationTest {
     public void testMauvaiseInitialisation() throws IOException {
         Parseur parseur = new Parseur();
 
-        parseur.parseInstruction(new EtatMachine(), "x vaut 3");
+        parseur.executerInstruction(new EtatMachine(), "x vaut 3");
     }
 
     @Test
     public void testPermetEspacesPartout() throws IOException {
         Parseur parseur = new Parseur();
 
-        EtatMachine etatMachine = parseur.parseInstruction(new EtatMachine(), "x     vaut    3   .    ");
+        EtatMachine etatMachine = parseur.executerInstruction(new EtatMachine(), "x     vaut    3   .    ");
 
         assertEquals(3, etatMachine.getValeur("x"));
     }

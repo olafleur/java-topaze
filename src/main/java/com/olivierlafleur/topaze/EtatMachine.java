@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class EtatMachine {
     private ArrayList<Variable> variables;
+    private Afficheur afficheur;
 
     public EtatMachine() {
         variables = new ArrayList<>();
+        afficheur = new AfficheurConsole();
     }
 
     public void ajouterVariable(Variable variable) {
@@ -19,5 +21,9 @@ public class EtatMachine {
                 .findAny()
                 .get()
                 .getValeur();
+    }
+
+    public void ecrire(String message) {
+        afficheur.ecrire(message);
     }
 }

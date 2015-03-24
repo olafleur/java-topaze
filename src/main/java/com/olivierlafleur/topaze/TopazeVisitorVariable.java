@@ -3,9 +3,19 @@ package com.olivierlafleur.topaze;
 import org.antlr.v4.runtime.misc.NotNull;
 
 public class TopazeVisitorVariable extends TopazeBaseVisitor<Variable> {
+    private EtatMachine etatMachine;
+
+    public TopazeVisitorVariable(EtatMachine etatMachine) {
+        this.etatMachine = etatMachine;
+    }
+
     @Override
     public Variable visitInitialisation(@NotNull TopazeParser.InitialisationContext ctx) {
-        return new Variable(ctx.nom.getText(), Integer.valueOf(ctx.valeur.getText()));
+        Variable variable = new Variable(ctx.nom.getText(), Integer.valueOf(ctx.valeur.getText()));
+
+        etatMachine.ajouterVariable(variable);
+
+        return variable;
     }
 
     @Override
@@ -25,6 +35,12 @@ public class TopazeVisitorVariable extends TopazeBaseVisitor<Variable> {
 
     @Override
     public Variable visitAffichage(@NotNull TopazeParser.AffichageContext ctx) {
+        etatMachine.ecrire(ctx.texte.getText());
+
         return super.visitAffichage(ctx);
+    }
+
+    public EtatMachine getEtatMachine() {
+        return etatMachine;
     }
 }
