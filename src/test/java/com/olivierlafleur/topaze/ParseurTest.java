@@ -22,4 +22,14 @@ public class ParseurTest {
 
         assertEquals(3, etatMachine.getValeur("x"));
     }
+
+    @Test
+    public void testAjouterAutreEntierMachine() {
+        EtatMachine etatMachine = new EtatMachine();
+
+        etatMachine.ajouterEntier("xy", 5);
+
+        assertEquals(5, etatMachine.getValeur("xy"));
+    }
+
 }

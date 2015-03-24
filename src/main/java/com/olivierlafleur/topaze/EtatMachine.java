@@ -1,11 +1,19 @@
 package com.olivierlafleur.topaze;
 
-public class EtatMachine {
-    public void ajouterEntier(String nom, int valeur) {
+import java.util.HashMap;
 
+public class EtatMachine {
+    private HashMap<String, Integer> variables;
+
+    public EtatMachine() {
+        variables = new HashMap<String, Integer>();
+    }
+
+    public void ajouterEntier(String nom, int valeur) {
+        variables.put(nom, valeur);
     }
 
     public int getValeur(String x) {
-        return 3;
+        return variables.get(x);
     }
 }
