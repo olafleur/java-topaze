@@ -115,8 +115,25 @@ public class TopazeParser extends Parser {
 			match(WS);
 			setState(6); 
 			((InitialisationContext)_localctx).valeur = match(Int);
-			setState(7); 
-			match(T__1);
+			setState(10);
+			switch (_input.LA(1)) {
+			case T__1:
+				{
+				setState(7); 
+				match(T__1);
+				}
+				break;
+			case WS:
+				{
+				setState(8); 
+				match(WS);
+				setState(9); 
+				match(T__1);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -131,9 +148,10 @@ public class TopazeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\7\f\4\2\t\2\3\2\3"+
-		"\2\3\2\3\2\3\2\3\2\3\2\3\2\2\2\3\2\2\2\n\2\4\3\2\2\2\4\5\7\5\2\2\5\6\7"+
-		"\6\2\2\6\7\7\3\2\2\7\b\7\6\2\2\b\t\7\7\2\2\t\n\7\4\2\2\n\3\3\2\2\2\2";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\7\17\4\2\t\2\3\2"+
+		"\3\2\3\2\3\2\3\2\3\2\3\2\3\2\5\2\r\n\2\3\2\2\2\3\2\2\2\16\2\4\3\2\2\2"+
+		"\4\5\7\5\2\2\5\6\7\6\2\2\6\7\7\3\2\2\7\b\7\6\2\2\b\f\7\7\2\2\t\r\7\4\2"+
+		"\2\n\13\7\6\2\2\13\r\7\4\2\2\f\t\3\2\2\2\f\n\3\2\2\2\r\3\3\2\2\2\3\f";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

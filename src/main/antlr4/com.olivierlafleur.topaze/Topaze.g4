@@ -1,7 +1,7 @@
 grammar Topaze;
 
 initialisation:
-    nom=Nom WS 'vaut' WS valeur=Int '.';
+    nom=Nom WS 'vaut' WS valeur=Int ('.' | WS '.');
 
 Nom: ('A'..'Z' | 'a'..'z')+;
 

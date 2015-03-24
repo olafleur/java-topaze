@@ -48,5 +48,12 @@ public class ParseurTest {
         parseur.parseInstruction(new EtatMachine(), "x vaut 3");
     }
 
+    @Test
+    public void testPermetEspacesPartout() throws IOException {
+        Parseur parseur = new Parseur();
 
+        EtatMachine etatMachine = parseur.parseInstruction(new EtatMachine(), "x     vaut    3   .    ");
+
+        assertEquals(3, etatMachine.getValeur("x"));
+    }
 }
