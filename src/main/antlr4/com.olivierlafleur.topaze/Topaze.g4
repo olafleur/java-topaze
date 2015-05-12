@@ -9,12 +9,13 @@ instruction
 | initialisation;
 
 affichage:
-    'afficher' WS '"' texte=Chaine '"' ('.' | WS '.');
+    'afficher' WS texte=ChaineEntreParentheses ('.' | WS '.');
 
 initialisation:
-    nom=Chaine WS 'vaut' WS valeur=Int ('.' | WS '.');
+    nom=NomVariable WS 'vaut' WS valeur=Int ('.' | WS '.');
 
-Chaine: ('A'..'Z' | 'a'..'z')+;
+ChaineEntreParentheses:  '"' ('""' | ~'"')* '"';
+NomVariable: ('A'..'Z' | 'a'..'z')+;
 
 WS: (' ' | '\t')+;
 Int : ('0'..'9')+;

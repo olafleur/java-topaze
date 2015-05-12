@@ -35,7 +35,7 @@ public class TopazeVisitorVariable extends TopazeBaseVisitor<Variable> {
 
     @Override
     public Variable visitAffichage(@NotNull TopazeParser.AffichageContext ctx) {
-        etatMachine.ecrire(ctx.texte.getText());
+        etatMachine.ecrire(ctx.texte.getText().substring(1, ctx.texte.getText().length()-1));
 
         return super.visitAffichage(ctx);
     }

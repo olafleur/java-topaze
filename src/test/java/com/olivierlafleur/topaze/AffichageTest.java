@@ -25,4 +25,11 @@ public class AffichageTest {
 
         verify(etatMachine).ecrire("bonjour");
     }
+
+    @Test
+    public void testParseStringAvecEspaces() throws IOException {
+        Parseur parseur = new Parseur();
+
+        parseur.executerInstruction(new EtatMachine(), "afficher \"bonjour toi\".");
+    }
 }

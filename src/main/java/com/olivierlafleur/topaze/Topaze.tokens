@@ -1,11 +1,10 @@
 T__0=1
 T__1=2
 T__2=3
-T__3=4
-Chaine=5
+ChaineEntreParentheses=4
+NomVariable=5
 WS=6
 Int=7
 'afficher'=1
-'"'=2
-'.'=3
-'vaut'=4
+'.'=2
+'vaut'=3
