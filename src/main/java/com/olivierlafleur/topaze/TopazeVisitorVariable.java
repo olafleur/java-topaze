@@ -10,8 +10,17 @@ public class TopazeVisitorVariable extends TopazeBaseVisitor<Variable> {
     }
 
     @Override
-    public Variable visitInitialisation(@NotNull TopazeParser.InitialisationContext ctx) {
+    public Variable visitInitialisation_entier(@NotNull TopazeParser.Initialisation_entierContext ctx) {
         Variable variable = new Variable(ctx.nom.getText(), Integer.valueOf(ctx.valeur.getText()));
+
+        etatMachine.ajouterVariable(variable);
+
+        return variable;
+    }
+
+    @Override
+    public Variable visitInitialisation_chaine(@NotNull TopazeParser.Initialisation_chaineContext ctx) {
+        Variable variable = new Variable(ctx.nom.getText(), ctx.texte.getText());
 
         etatMachine.ajouterVariable(variable);
 

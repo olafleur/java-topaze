@@ -6,12 +6,16 @@ block: instruction*;
 
 instruction
 : affichage
-| initialisation;
+| initialisation_chaine
+| initialisation_entier;
 
 affichage:
     'afficher' WS texte=ChaineEntreParentheses ('.' | WS '.');
 
-initialisation:
+initialisation_chaine:
+    nom=NomVariable WS 'vaut' WS texte=ChaineEntreParentheses ('.' | WS '.');
+
+initialisation_entier:
     nom=NomVariable WS 'vaut' WS valeur=Int ('.' | WS '.');
 
 ChaineEntreParentheses:  '"' ('""' | ~'"')* '"';

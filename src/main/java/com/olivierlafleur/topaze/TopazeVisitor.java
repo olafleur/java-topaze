@@ -36,9 +36,15 @@ public interface TopazeVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAffichage(@NotNull TopazeParser.AffichageContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link TopazeParser#initialisation}.
+	 * Visit a parse tree produced by {@link TopazeParser#initialisation_chaine}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitInitialisation(@NotNull TopazeParser.InitialisationContext ctx);
+	T visitInitialisation_chaine(@NotNull TopazeParser.Initialisation_chaineContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link TopazeParser#initialisation_entier}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitInitialisation_entier(@NotNull TopazeParser.Initialisation_entierContext ctx);
 }

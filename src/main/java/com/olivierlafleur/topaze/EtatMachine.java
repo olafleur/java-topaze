@@ -15,12 +15,11 @@ public class EtatMachine {
         variables.add(variable);
     }
 
-    public int getValeur(String nom) {
+    public Variable getValeur(String nom) {
         return variables.stream()
                 .filter(v -> v.getName().equals(nom))
                 .findAny()
-                .get()
-                .getValeur();
+                .get();
     }
 
     public void ecrire(String message) {
