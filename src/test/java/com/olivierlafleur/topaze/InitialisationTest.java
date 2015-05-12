@@ -42,7 +42,7 @@ public class InitialisationTest {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void testMauvaiseInitialisation() throws IOException {
+    public void testMauvaiseInitialisationCarManquePoint() throws IOException {
         Parseur parseur = new Parseur();
 
         parseur.executerInstruction(new EtatMachine(), "x vaut 3");
@@ -55,5 +55,12 @@ public class InitialisationTest {
         EtatMachine etatMachine = parseur.executerInstruction(new EtatMachine(), "x     vaut    3   .    ");
 
         assertEquals(3, etatMachine.getValeur("x"));
+    }
+
+    @Test
+    public void nomVariablePermetChiffreEtSouligneDedans() throws IOException {
+        Parseur parseur = new Parseur();
+
+        parseur.executerInstruction(new EtatMachine(), "a_3 vaut 5.");
     }
 }

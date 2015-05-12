@@ -15,7 +15,7 @@ initialisation:
     nom=NomVariable WS 'vaut' WS valeur=Int ('.' | WS '.');
 
 ChaineEntreParentheses:  '"' ('""' | ~'"')* '"';
-NomVariable: ('A'..'Z' | 'a'..'z')+;
+NomVariable: ('A'..'Z' | 'a'..'z')('A'..'Z' | 'a'..'z' | Int | '_')*;
 
 WS: (' ' | '\t')+;
 Int : ('0'..'9')+;
