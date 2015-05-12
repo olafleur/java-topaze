@@ -32,4 +32,16 @@ public class AffichageTest {
 
         parseur.executerInstruction(new EtatMachine(), "afficher \"bonjour toi\".");
     }
+
+    @Test
+    public void testAfficherContenuVariable() throws IOException {
+        Parseur parseur = new Parseur();
+
+        EtatMachine etatMachine = new EtatMachine();
+
+        parseur.executerInstruction(etatMachine, "x vaut 3.");
+        parseur.executerInstruction(etatMachine, "afficher x.");
+
+        verify(etatMachine).ecrire("3");
+    }
 }
